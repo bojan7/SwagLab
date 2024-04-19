@@ -13,7 +13,7 @@ public class BeforeAll {
 
     public WebDriver driver;
     public WebDriverWait wait;
-    public String baseURL;
+    public static String baseURL;
 
 
     @BeforeTest

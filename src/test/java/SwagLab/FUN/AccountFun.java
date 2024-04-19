@@ -20,7 +20,20 @@ public class AccountFun extends BeforeAll {
         driver.findElement(LogInPageObject.LogInButtonField).click();
 
         //wait until the 'products' is displayed
-        wait.until(ExpectedConditions.visibilityOfElementLocated(PLPObjects.product));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(PLPObjects.swag));
+
+    }
+
+    public static void invalidLogIn(WebDriver driver, WebDriverWait wait) {
+        //Fill in password field
+        driver.findElement(LogInPageObject.passwordField).sendKeys("secret_sauce");
+        //click on the login button
+        driver.findElement(LogInPageObject.LogInButtonField).click();
+        //wait until proper error message appears
+        wait.until(ExpectedConditions.visibilityOfElementLocated(LogInPageObject.errorMessage));
+
+        //refresh the page
+        driver.navigate().refresh();
 
     }
 

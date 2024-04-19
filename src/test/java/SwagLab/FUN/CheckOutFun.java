@@ -2,16 +2,14 @@ package SwagLab.FUN;
 
 import SwagLab.BeforeAll;
 import SwagLab.POM.*;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CheckOutFun extends BeforeAll {
 
     public static void checkout(WebDriver driver, WebDriverWait wait) {
-
-//        //scroll down to add items to chert
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("window.scrollBy(0,350)", "");
 
         //add items
         driver.findElement(PLPObjects.onesie).click();
@@ -38,9 +36,12 @@ public class CheckOutFun extends BeforeAll {
             driver.findElement(yourInformationObject.informationPage).isDisplayed();
 
             //fill in necessary fields
-            driver.findElement(yourInformationObject.firstnameField).sendKeys("Bojan");
-            driver.findElement(yourInformationObject.lastNameField).sendKeys("Jevtic");
-            driver.findElement(yourInformationObject.zipCodeField).sendKeys("11000");
+            String FirstName = RandomStringUtils.randomAlphabetic(4).toLowerCase();
+            driver.findElement(yourInformationObject.firstnameField).sendKeys("B" + FirstName);
+            String LastName = RandomStringUtils.randomAlphabetic(4).toLowerCase();
+            driver.findElement(yourInformationObject.lastNameField).sendKeys("J" + LastName);
+            String ZipCode = RandomStringUtils.randomAlphabetic(5).toLowerCase();
+            driver.findElement(yourInformationObject.zipCodeField).sendKeys(ZipCode);
 
             //click on the continue button
             driver.findElement(yourInformationObject.continueButton).click();
