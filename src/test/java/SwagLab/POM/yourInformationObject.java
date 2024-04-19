@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 
 public class yourInformationObject {
 
+    //text on checkout page for confirmation
     public static By informationPage = By.xpath("//span[contains(text(),'Checkout: Your Information')]");
     public static By firstnameField = By.id("first-name");
     public static By lastNameField = By.id("last-name");

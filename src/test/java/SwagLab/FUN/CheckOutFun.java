@@ -3,16 +3,16 @@ package SwagLab.FUN;
 import SwagLab.BeforeAll;
 import SwagLab.POM.*;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class CheckOutFun extends BeforeAll {
 
     public static void checkout(WebDriver driver, WebDriverWait wait) {
 
         //add items
-        driver.findElement(PLPObjects.onesie).click();
+        driver.findElement(PLPObjects.backpack).click();
         driver.findElement(PLPObjects.jacket).click();
 
         //get the amount on chart
@@ -28,6 +28,11 @@ public class CheckOutFun extends BeforeAll {
             //confirm product is added
             driver.findElement(PLPObjects.backpackName).isDisplayed();
             driver.findElement(PLPObjects.jacketName).isDisplayed();
+
+            //or confirm this way tha the added product has the same name after adding it in
+            Assert.assertEquals(PLPObjects.backpackName, ChartObject.backpackName);
+            Assert.assertEquals(PLPObjects.jacketName, ChartObject.jacketName);
+
 
             //Click on the Checkout Button
             driver.findElement(ChartObject.checkoutButton).click();

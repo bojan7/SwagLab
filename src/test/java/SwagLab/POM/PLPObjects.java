@@ -3,7 +3,7 @@ package SwagLab.POM;
 import org.openqa.selenium.By;
 
 public class PLPObjects {
-    //Product name
+    //PLP swag lab text
     public static By swag = By.xpath("//div[contains(text(),'Swag Labs')]");
 
     //Filter menu
@@ -19,7 +19,7 @@ public class PLPObjects {
     public static By productName = By.xpath("//div[contains(@data-test,'inventory-item-name')]");
 
     //add to chart button/item
-    public static By onesie = By.id("add-to-cart-sauce-labs-backpack");
+    public static By backpack = By.id("add-to-cart-sauce-labs-backpack");
 
     //get name of the item backpack
     public static By backpackName = By.xpath("//div[contains(text(),'Sauce Labs Backpack')]");
@@ -27,6 +27,5 @@ public class PLPObjects {
     //add jacket to chart
     public static By jacket = By.id("add-to-cart-sauce-labs-fleece-jacket");
     //get name of the jacket
-
-    public static By jacketName = By.xpath("//div[contains(text(), 'Sauce Labs Fleece Jacket')]");
+    public static By jacketName = By.xpath("//div[contains(text(),'Sauce Labs Fleece Jacket')]");
 }
